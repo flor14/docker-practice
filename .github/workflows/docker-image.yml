@@ -1,4 +1,4 @@
-nname: Publish Dockerfile on DockerHub
+name: Publish Dockerfile on DockerHub
 on: 
   push: 
     branches:
