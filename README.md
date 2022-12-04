@@ -1,4 +1,4 @@
-# docker-practice
+# Docker practice
 
 First I build the Docker image and save it with the name `jupyter-dash`
 
