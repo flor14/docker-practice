@@ -21,12 +21,22 @@ jobs:
         WITH_V: true
         RELEASE_BRANCHES: main
       id: bump
-    - name: Create GitHub release
+    - uses: actions/checkout@v3
+    - name: Tag and prepare release
+      id: tag_and_prepare_release
+      uses: K-Phoen/semver-release-action@v1.3.1
+      with:
+        release_branch: master
+        release_strategy: tag
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload release notes
+      if: steps.tag_and_prepare_release.outputs.tag
       uses: Roang-zero1/github-create-release-action@v3
       with:
-        version_regex: ^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+
+         created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
