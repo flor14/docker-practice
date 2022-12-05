@@ -1,5 +1,5 @@
 # set base image from jupyter
-FROM jupyter/base-notebook@sha256:0ae6852796b35765b40c10c8a0156f04f00b1d3c55c4d7d3406e0e4307809de5
+FROM jupyter/docker-stacks-foundation:python-3.10.8
 
 USER root
 
