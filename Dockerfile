@@ -1,5 +1,5 @@
 # set base image from jupyter
-FROM jupyter/base-notebook@sha256:357253ce22669889f068e908de52d25705e2dff5a01e7b59c83e6f7dac928cb5
+FROM jupyter/base-notebook@sha256:0ae6852796b35765b40c10c8a0156f04f00b1d3c55c4d7d3406e0e4307809de5
 
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential r-base r-cran-randomforest python3.6 python3-pip python3-setuptools python3-dev
 
