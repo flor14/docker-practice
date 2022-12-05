@@ -10,3 +10,4 @@ COPY requirements.txt /app/requirements.txt
 RUN pip3 install -r requirements.txt
 
 RUN Rscript -e "install.packages('data.table')"
+
