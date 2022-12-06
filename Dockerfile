@@ -1,5 +1,5 @@
 # set base image from jupyter
-FROM jupyter/docker-stacks-foundation:latest
+FROM jupyter/scipy-notebook:python-3.10.8
 
 USER root
 
