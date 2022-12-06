@@ -3,7 +3,7 @@ name: 'build images' # https://blog.oddbit.com/post/2020-09-25-building-multi-ar
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   docker:
