@@ -1,19 +1,14 @@
 # docker-practice
 
-First I build the Docker image and save it with the name `jupyter-dash`
+First, you can build the Docker image and save it with the name `jupyter-demo`
 
 ```bash
-docker build -t flor14/jupyter-dash .
+docker build -t flor14/jupyter-demo .
 ```
 
-Then I run the container with the command 
+Then, you can run the container with the command 
 
 ```bash
- docker run -it -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes jupyter-dash
+ docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work/ jupyter-demo
 ```
 
-Push the image to DockerHub (I should add a tag here)
-
-```bash
-docker push flor14/jupyter-dash:latest
-```
